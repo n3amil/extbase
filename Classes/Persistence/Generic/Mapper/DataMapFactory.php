@@ -251,6 +251,7 @@ class DataMapFactory implements \TYPO3\CMS\Core\SingletonInterface
      */
     protected function getColumnsDefinition($tableName)
     {
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadExtTables();
         return is_array($GLOBALS['TCA'][$tableName]['columns']) ? $GLOBALS['TCA'][$tableName]['columns'] : [];
     }
 
