@@ -225,6 +225,7 @@ class DataMapFactory implements SingletonInterface
      */
     protected function getColumnsDefinition(string $tableName): array
     {
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadExtTables();
         return is_array($GLOBALS['TCA'][$tableName]['columns']) ? $GLOBALS['TCA'][$tableName]['columns'] : [];
     }
 
